@@ -6,7 +6,7 @@ etc.
 
 
 
-## page one
+## home page
 breif description
 different options
 -interactive globe link
@@ -25,3 +25,16 @@ highlight countries
 
 ## search page
 searches for specific countries
+
+
+
+
+## 
+
+
+
+(Home Page)
+    |-----------------------|   
+    V                       V
+(interactive globe)     (search engine)
+
