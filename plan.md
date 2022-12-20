@@ -1,8 +1,10 @@
 ## GET API WORKINHG
 options:
-- Mapbox
-- Google Maps
+- Mapbox- out of bounds
+- Google Maps- out of bounds
 etc.
+
+Relavent apis without banking needed:
 
 
 
@@ -12,26 +14,22 @@ different options
 -interactive globe link
 -search engine
     -statuses of countries
-idk what else yet
+-countries display page
 
 
 
 ## interactive globe map
-when u hover over country it highlights and a card popus up with its status
-timezone highlight option
-highlight countries
+- when you hover over country it highlights and a card popus up with its status
+- timezone highlight option
 
 
 
 ## search page
-searches for specific countries
+searches for specific countries and their stats/data
 
 
 
-
-## 
-
-
+##
 
 (Home Page)
     |-----------------------|   
