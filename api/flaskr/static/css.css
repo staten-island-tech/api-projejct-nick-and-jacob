@@ -1,0 +1,60 @@
+button {
+    height: 48px;
+    width: 200px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-align: justify;
+    justify-content: space-between;
+    flex-direction: column;
+    border: 3px solid #177587;
+    background-color: #177587;
+    margin: 5px auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 40px;
+    border-radius: 15px;
+    text-decoration: none;
+}
+/*-------------------------------------------------------------------------------------------------------------*/
+
+.flex-container{
+    display: flex;
+    justify-content: space-evenly;  
+    flex-wrap: wrap; 
+    align-items: center;
+    width: 95vw;
+    margin: 30px auto; 
+    flex-direction: row;
+}
+
+/*-------------------------------------------------------------------------------------------------------------*/
+
+.card {
+    height: 375px;
+    width: 26%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    border: 1px transparent;
+    background-color: #55b0b0;
+    margin: 30px;
+    border-radius: 15px;
+    transition: all 0.3s;
+    box-shadow: rgb(0, 0, 0);
+    box-shadow: 1px 12px 15px rgba(0, 0, 0, .4);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
