@@ -9,7 +9,7 @@ Relavent apis without banking needed:
 
 
 ## home page
-breif description
+brief description
 different options
 -interactive globe link
 -search engine
@@ -21,11 +21,12 @@ different options
 ## interactive globe map
 - when you hover over country it highlights and a card popus up with its status
 - timezone highlight option
+- Like a highscool project version of geoguesser, but no guessing, just raw information
 
 
 
 ## search page
-searches for specific countries and their stats/data
+searches for specific countries and their data(Population, area, timezone, etc.)
 
 
 
