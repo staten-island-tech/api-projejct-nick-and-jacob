@@ -1,6 +1,6 @@
 ## GET API WORKINHG
 options:
-- Mapbox
+- Mapbox --- REQUIRES PAYMENT METHOD NOOOO
 - Google Maps
 etc.
 
