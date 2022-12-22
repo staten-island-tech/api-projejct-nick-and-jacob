@@ -2,7 +2,6 @@ import os
 
 from flask import Flask, render_template, request
 
-
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
@@ -17,7 +16,6 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
-
 
     @app.route('/World/<data>')
     def world(data):

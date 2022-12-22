@@ -5,7 +5,13 @@ options:
 etc.
 
 Relavent apis without banking needed:
--MapQuest
+https://github.com/public-apis/public-apis
+- MapQuest
+- REST Countries
+- Zippopotam.us
+- TomTom
+- Cartes.io
+
 
 
 ## home page
