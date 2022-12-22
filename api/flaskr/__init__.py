@@ -1,5 +1,5 @@
 import os
-import requests
+
 from flask import Flask, render_template, request
 
 
@@ -19,8 +19,10 @@ def create_app(test_config=None):
         pass
 
 
-    @app.route('/')
-    def hello():
-        return 'Hello, World!'
-
+    @app.route('/World/<data>')
+    def world(data):
+        if data == 'World':
+            return request('base.html')
+        else:
+            return render_template('base.html')
     return app
