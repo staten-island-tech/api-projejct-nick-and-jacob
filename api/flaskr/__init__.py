@@ -26,3 +26,10 @@ def create_app(test_config=None):
         else:
             return render_template('base.html')
     return app
+
+#Material Icon Theme by Philipp Kief
+#Pylance
+#isort
+#Python Extension Pack
+#Python Indent
+#autoDocstring - Python Docstring Generator by Nils Werner
