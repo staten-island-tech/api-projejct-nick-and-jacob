@@ -2,14 +2,15 @@
 options:
 - Mapbox- out of bounds
 - Google Maps- out of bounds
+- TomTom- out of bounds
 etc.
+
 
 Relavent apis without banking needed:
 https://github.com/public-apis/public-apis
 - MapQuest
 - REST Countries
 - Zippopotam.us
-- TomTom
 - Cartes.io
 
 
