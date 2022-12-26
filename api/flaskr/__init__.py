@@ -27,10 +27,15 @@ def create_app(test_config=None):
     
     @app.route('/World/<data>')
     def world(data):
-        if data == 'World':
-            return request('base.html')
-        else:
+        placeholder = []
+        for data in placeholder:
+            placeholder.append(data)
+        if data == 'WorldMap':
+            return request('world.html')
+        elif data == 'Search%Countries':
             return render_template('base.html')
+        else:
+            return render_template('error.html')
     return app
 
 

@@ -1,17 +1,17 @@
 data = []
 cards = [
-    {'option'
-     'info'
-     'link'
-     'img'},
+    {'option':'Search Country',
+     'info':'',
+     'link':'/Search%Countries',
+     'img':'',},
     
-    {'option'
-     'info'
-     'link'
-     'img'},
+    {'option':'World Map',
+     'info':'',
+     'link':'/WorldMap',
+     'img':'',},
     
-    {'option'
-     'info'
-     'link'
-     'img'},
+    {'option':'',
+     'info':'',
+     'link':'',
+     'img':'',},
 ]
