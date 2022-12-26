@@ -1,6 +1,10 @@
 import os
-
 from flask import Flask, render_template, request
+import requests
+
+url = 'https://www.mapquestapi.com/staticmap/v5/map'
+response = requests.get(url)
+
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
@@ -16,7 +20,11 @@ def create_app(test_config=None):
         os.makedirs(app.instance_path)
     except OSError:
         pass
-
+    
+    @app.route('/')
+    def hello():
+        return render_template('base.html')
+    
     @app.route('/World/<data>')
     def world(data):
         if data == 'World':
@@ -24,6 +32,31 @@ def create_app(test_config=None):
         else:
             return render_template('base.html')
     return app
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #Material Icon Theme by Philipp Kief
 #Pylance
