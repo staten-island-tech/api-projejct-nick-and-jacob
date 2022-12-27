@@ -26,23 +26,27 @@ def create_app(test_config=None):
     def hello():
         return render_template('base.html')
     
-    @app.route('/World/path=<data>')
+    @app.route('/WorldMap/<country>')
+    def output(country):
+        if country == country:
+            return render_template('output.html')
+        else:
+            
+    @app.route('/<data>')
     def world(data):
         placeholder = []
-        for data in cards['option']:
-            placeholder.append(['option'])
-        if data in placeholder == 'World':
-            return request('world.html')
-        elif data in placeholder == 'Search%Countries':
-            return render_template('base.html')
+        for x in cards['card']:
+            placeholder.append(x['option'])
+        if data == 'WorldMap':
+            return render_template('world.html')
+        elif data == 'SearchCountry':
+            return render_template('search.html')
+        elif data == 'CountryList':
+            return render_template('countrylist.html')
         else:
             return render_template('error.html')
+            
     return app
-
-
-
-
-
 
 
 

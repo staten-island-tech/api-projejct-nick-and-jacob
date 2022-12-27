@@ -1,17 +1,20 @@
-data = {[]}
 cards = {'card':[
-    {'option':'Search Country',
+    {'option':'SearchCountry',
      'info':'',
-     'link':'/Search%Countries',
+     'link':'/SearchCountry',
      'img':'',},
     
-    {'option':'World',
+    {'option':'WorldMap',
      'info':'',
      'link':'/WorldMap',
      'img':'',},
     
-    {'option':'',
+    {'option':'CountryList',
      'info':'',
      'link':'',
      'img':'',},]
 }
+
+
+def button():
+    input = ['']

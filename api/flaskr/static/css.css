@@ -5,9 +5,8 @@ html {
   margin: 0;
   padding: 0;
 }
-/* body {
-  background-image: src='map.py';
-} */
+
+
 .button {
   height: 48px;
   width: 200px;
@@ -33,13 +32,13 @@ body {
 /*---------------------------------------- FLEX CONTAINER ----------------------------------------*/
 
 .flex-container{
-    display: flex;
-    justify-content: space-evenly;  
-    flex-wrap: wrap; 
-    align-items: center;
-    width: 95vw;
-    margin: 30px auto; 
-    flex-direction: row;
+  display: flex;
+  justify-content: space-evenly;  
+  flex-wrap: wrap; 
+  align-items: center;
+  width: 95vw;
+  margin: 30px auto; 
+  flex-direction: row;
 }
 
 /*-------------------------------------------- CARDS --------------------------------------------*/
@@ -64,22 +63,21 @@ svg path{
   fill: #323b63;
   stroke: rgb(16, 16, 43);
   stroke-width: 0.1%;
+  transition: 0.4s;
 }
 svg path:hover{
-  fill: aquamarine;
-  transition: 0.6s;
+  fill: rgba(96, 225, 182, 0.726);
+  transition: 0.4s;
   cursor: pointer;
 }
-svg:hover:after {
-  fill: #323b63;
-  transition: 0.6s;
+svg:hover {
+  transition: 0.1s;
+  scroll-behavior: smooth;
 }
-.svg {
-  height:'857';
-  width:'2000'
+/*--------------------------------------- Fine Tuning ---------------------------------------*/
+.left-margin {
+  margin-left: 5px;
 }
-
-
 
 /*--------------------------------------- TESTS/EXPERIMENTS ---------------------------------------*/
 

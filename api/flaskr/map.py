@@ -37,3 +37,4 @@ m.drawmeridians(np.arange(merid_range[0],merid_range[1],merid_count))
 # save figure at 150 dpi and show it
 plt.savefig('orthographic_map_example_python.png',dpi=150,transparent=True)
 plt.show()
+#pip install basemap
