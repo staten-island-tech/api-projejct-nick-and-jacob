@@ -1,6 +1,7 @@
 import os
 from flask import Flask, render_template, request
 import requests
+from .data import cards
 
 url = 'https://www.mapquestapi.com/staticmap/v5/map'
 response = requests.get(url)
@@ -25,14 +26,14 @@ def create_app(test_config=None):
     def hello():
         return render_template('base.html')
     
-    @app.route('/World/<data>')
+    @app.route('/World/path=<data>')
     def world(data):
         placeholder = []
-        for data in placeholder:
-            placeholder.append(data)
-        if data == 'WorldMap':
+        for data in cards['option']:
+            placeholder.append(['option'])
+        if data in placeholder == 'World':
             return request('world.html')
-        elif data == 'Search%Countries':
+        elif data in placeholder == 'Search%Countries':
             return render_template('base.html')
         else:
             return render_template('error.html')
@@ -69,3 +70,5 @@ def create_app(test_config=None):
 #Python Extension Pack
 #Python Indent
 #autoDocstring - Python Docstring Generator by Nils Werner
+#pip install python-restcountries
+#https://github.com/SteinRobert/python-restcountries

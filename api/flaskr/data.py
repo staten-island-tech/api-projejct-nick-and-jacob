@@ -1,11 +1,11 @@
-data = []
-cards = [
+data = {[]}
+cards = {'card':[
     {'option':'Search Country',
      'info':'',
      'link':'/Search%Countries',
      'img':'',},
     
-    {'option':'World Map',
+    {'option':'World',
      'info':'',
      'link':'/WorldMap',
      'img':'',},
@@ -13,5 +13,5 @@ cards = [
     {'option':'',
      'info':'',
      'link':'',
-     'img':'',},
-]
+     'img':'',},]
+}
