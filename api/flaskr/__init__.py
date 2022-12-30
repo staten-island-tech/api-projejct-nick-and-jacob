@@ -31,7 +31,8 @@ def create_app(test_config=None):
         if country == country:
             return render_template('output.html')
         else:
-            
+            return render_template('error.html')
+        
     @app.route('/<data>')
     def world(data):
         placeholder = []
@@ -45,7 +46,7 @@ def create_app(test_config=None):
             return render_template('countrylist.html')
         else:
             return render_template('error.html')
-            
+         
     return app
 
 
