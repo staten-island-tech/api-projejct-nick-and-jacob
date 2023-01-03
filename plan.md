@@ -27,6 +27,7 @@ different options
 
 ## search page
 searches for specific countries and their data(Population, area, timezone, etc.)
+can
 allows you to return to the globe and search for other countries so you don't have to stay in Nepal forever, along with its 29.67 million residents.
 
 
