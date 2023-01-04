@@ -38,4 +38,12 @@ allows you to return to the globe and search for other countries so you don't ha
     |-----------------------|   
     V                       V
 (interactive globe)     (search engine)
-
+    |                       |
+    V                       V
+(clicking on country)    (Allow for user input by searching for specific country)
+    |                       |
+    V                       V
+    |-----------------------|
+               |
+               V
+(Information being shown to user regarding the country they searched or clicked on in the globe)
