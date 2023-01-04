@@ -1,7 +1,13 @@
 html {
-    background-color: aquamarine;
-}
-button {
+    background-image: linear-gradient(45deg, rgb(27, 27, 40), rgba(85, 85, 156, 0.7), rgb(27, 27, 40));
+    background-repeat: no-repeat;
+    font-family: 'Bungee', cursive;
+    margin: 0;
+    padding: 0;
+  }
+  
+  
+  .button {
     height: 48px;
     width: 200px;
     display: flex;
@@ -10,18 +16,22 @@ button {
     text-align: justify;
     justify-content: space-between;
     flex-direction: column;
-    border: 3px solid #9fbac7;
-    background-color: #4e3e52;
+    border: 3px solid #177587;
+    background-color: #177587;
     margin: 5px auto;
     margin-top: 20px;
     margin-bottom: 20px;
     line-height: 40px;
     border-radius: 15px;
     text-decoration: none;
-}
-/*-------------------------------------------------------------------------------------------------------------*/
-
-.flex-container{
+  }
+  body {
+    text-align: center;
+  }
+  
+  /*---------------------------------------- FLEX CONTAINER ----------------------------------------*/
+  
+  .flex-container{
     display: flex;
     justify-content: space-evenly;  
     flex-wrap: wrap; 
@@ -29,11 +39,11 @@ button {
     width: 95vw;
     margin: 30px auto; 
     flex-direction: row;
-}
-
-/*-------------------------------------------------------------------------------------------------------------*/
-
-.card {
+  }
+  
+  /*-------------------------------------------- CARDS --------------------------------------------*/
+  
+  .cards {
     height: 375px;
     width: 26%;
     display: flex;
@@ -47,17 +57,134 @@ button {
     transition: all 0.3s;
     box-shadow: rgb(0, 0, 0);
     box-shadow: 1px 12px 15px rgba(0, 0, 0, .4);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
+  }
+  /*--------------------------------------- SVG images ---------------------------------------*/
+  svg path{
+    fill: #323b63;
+    stroke: rgb(16, 16, 43);
+    stroke-width: 0.1%;
+    transition: 0.4s;
+  }
+  svg path:hover{
+    fill: rgba(96, 225, 182, 0.726);
+    transition: 0.4s;
+    cursor: pointer;
+  }
+  svg:hover {
+    transition: 0.1s;
+    scroll-behavior: smooth;
+  }
+  /*--------------------------------------- Fine Tuning ---------------------------------------*/
+  .left-margin {
+    margin-left: 5px;
+  }
+  
+  /*--------------------------------------- TESTS/EXPERIMENTS ---------------------------------------*/
+  
+  
+  /* .circle {
+      display: block;
+      background: black;
+      border-radius: 50%;
+      height: 300px;
+      width: 300px;
+      margin: 0;
+      background: radial-gradient(circle at 100px 100px, #5cabff, #000);
+    }
+    .stage {
+      width: 300px;
+      height: 300px;
+      display: inline-block;
+      margin: 20px;
+      perspective: 1200px;
+      perspective-origin: 50% 50%;
+    }
+    .ball .shadow {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1) 40%, rgba(0, 0, 0, 0) 50%);
+      transform: rotateX(90deg) translateZ(-150px);
+      z-index: -1;
+    }
+    .ball {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      border-radius: 50%;
+      position: relative;
+      background: radial-gradient(circle at 50% 120%, #323232, #0a0a0a 80%, #000000 100%);
+      cursor: move;
+    }
+    .ball:-moz-drag-over{
+      rotate: translateX(-80px) translateY(-90px) skewX(-20deg);
+    }
+    .ball:before {
+      content: "";
+      position: absolute;
+      background: radial-gradient(circle at 50% 120%, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0) 70%);
+      border-radius: 50%;
+      bottom: 2.5%;
+      left: 5%;
+      opacity: 0.6;
+      height: 100%;
+      width: 90%;
+      filter: blur(5px);
+      z-index: 2;
+    }
+    .ball:after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 5%;
+      left: 10%;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8) 14%, rgba(255, 255, 255, 0) 24%);
+      transform: translateX(-80px) translateY(-90px) skewX(-20deg);
+      filter: blur(10px);
+    }
+    .ball .eight {
+      width: 110px;
+      height: 110px;
+      margin: 30%;
+      background: white;
+      border-radius: 50%;
+      transform: translateX(68px) translateY(-60px) skewX(15deg) skewY(2deg);
+      position: absolute;
+    }
+    .ball .eight:before {
+      content: "8";
+      display: block;
+      position: absolute;
+      text-align: center;
+      height: 80px;
+      width: 100px;
+      left: 50px;
+      margin-left: -40px;
+      top: 44px;
+      margin-top: -40px;
+      color: black;
+      font-family: Arial;
+      font-size: 90px;
+      line-height: 104px;
+    }
+   
+  
+    .ball {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 50% 120%, #81e8f6, #76deef 10%, #055194 80%, #062745 100%);
+    }
+    
+    .ball {
+      display: block;
+      transition: all 4s;
+    }
+    
+    .ball-holder:hover .ball {
+      transform: translateX(calc(100vw - 80px)) rotate(360deg);
+    }
+  */
