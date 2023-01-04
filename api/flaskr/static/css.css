@@ -1,3 +1,6 @@
+html {
+    background-color: aquamarine;
+}
 button {
     height: 48px;
     width: 200px;
@@ -38,7 +41,7 @@ button {
     justify-content: space-between;
     flex-direction: column;
     border: 1px transparent;
-    background-color: #55b0b0;
+    background-image: radial-gradient(#2f375f 10%, #424b77c7);
     margin: 30px;
     border-radius: 15px;
     transition: all 0.3s;
