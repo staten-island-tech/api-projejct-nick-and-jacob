@@ -1,7 +1,6 @@
 from mpl_toolkits.basemap import Basemap
 import matplotlib.pyplot as plt
 import numpy as np
-
 fig = plt.figure(figsize=(9,6))
 
 # set perspective angle

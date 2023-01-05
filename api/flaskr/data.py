@@ -15,6 +15,5 @@ cards = {'card':[
      'img':'',},]
 }
 
-
 def button():
     input = ['']
