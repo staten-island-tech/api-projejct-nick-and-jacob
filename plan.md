@@ -42,4 +42,22 @@ searches for specific countries and their stats/data
     |-----------------------|   
     V                       V
 (interactive globe)     (search engine)
+    |                       |
+    V                       V 
+(Can click on country)     (Can search for specific country if you don't know where it is on globe)
+    |                       |
+    |                       |
+    V                       V 
+    |-----------------------|
+                |
+                V
+(Shows you country you clicked on or searched for)
+
+
+
+
+
+
+
+
 
