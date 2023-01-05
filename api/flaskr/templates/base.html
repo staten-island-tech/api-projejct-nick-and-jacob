@@ -13,11 +13,17 @@
   <h1><b>Welcome to interactive World Data!</b></h1>
 </nav>
 <body>
-  <div class='flex-container'>
-    <div class='cards'>
-      <h2>Hi</h2>
+  {% for x in cards['card']%}
+    {% if x['option'] %}
+    <div class='flex-container'>
+      <div class='cards'>
+        <h2>{{ x['option']}}</h2>
+      </div>
     </div>
-  </div>
+    {% endif %}
+  {% endfor %}
+  <span> 
+  </span>
 
 </body>
 </html>
