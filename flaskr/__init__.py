@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, request
-import requestswefwef
+import requests
 from .data import cards
 
 # url = 'https://www.mapquestapi.com/staticmap/v5/map'
