@@ -1,7 +1,7 @@
 import os
 from flask import Flask, render_template, request
 from .data import cards
-
+import requests
 # url = 'https://www.mapquestapi.com/staticmap/v5/map'
 # response = requests.get(url)
 
@@ -45,7 +45,7 @@ def create_app(test_config=None):
             return render_template('countrylist.html')
         else:
             return render_template('error.html')
-         
+
     return app
 
 
