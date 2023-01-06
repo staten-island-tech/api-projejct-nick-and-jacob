@@ -1,11 +1,18 @@
 html {
   background-image: linear-gradient(45deg, rgb(27, 27, 40), rgba(85, 85, 156, 0.7), rgb(27, 27, 40));
   background-repeat: no-repeat;
-  font-family: 'Bungee', cursive;
+  font-family: 'Verdana', cursive;
   margin: 0;
   padding: 0;
 }
-
+.text-gradient{
+  font-size: 38px;
+  background-image: linear-gradient(45deg,rgb(45, 45, 97),rgb(81, 177, 184));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip:text;
+  -moz-background-clip:text;
+  background-clip:text;
+}
 
 .button {
   height: 48px;
