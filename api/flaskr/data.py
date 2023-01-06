@@ -11,10 +11,9 @@ cards = {'card':[
     
     {'option':'CountryList',
      'info':'',
-     'link':'',
+     'link':'/CountryList',
      'img':'',},]
 }
-
 
 def button():
     input = ['']
