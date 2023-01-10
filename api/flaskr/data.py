@@ -1,17 +1,19 @@
-cards = {'card':[
-    {'option':'SearchCountry',
+data = {'card':
+    [{'option':'Search_Country',
      'info':'',
-     'link':'/SearchCountry',
+     'link':'/Search Country',
      'img':'',},
     
-    {'option':'WorldMap',
+    {'option':'World_Map',
      'info':'',
-     'link':'/WorldMap',
+     'link':'/World Map',
      'img':'',},
     
-    {'option':'CountryList',
+    {'option':'Country_List',
      'info':'',
-     'link':'/CountryList',
-     'img':'',},]
+     'link':'/Country List',
+     'img':'',},
+    ],
+    'intworld': 'Welcome to Interactive World Data'
 }
 

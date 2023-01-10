@@ -7,7 +7,7 @@ html {
 }
 .text-gradient{
   font-size: 38px;
-  background-image: linear-gradient(45deg,rgb(45, 45, 97),rgb(81, 177, 184));
+  background-image: linear-gradient(45deg,rgba(23, 76, 80, 0.9),rgba(16, 16, 65, 0.9));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip:text;
   -moz-background-clip:text;
@@ -16,23 +16,25 @@ html {
 span {
   content: none;  
   background: fixed;
-  background-color: rgba(23, 25, 97, 0.5);
-  background-image: -webkit-repeating-linear-gradient(-45deg, rgb(23, 25, 97),rgba(57, 60, 136, 0.685),rgb(23, 25, 97));
   background-size: 30vmin, 100vmax;
+  color: transparent;
+  pointer-events: none;
 }
 
-
+a {
+  text-decoration: none;
+}
 .button {
-  height: 48px;
-  width: 200px;
+  height: 10%;
+  width: 80%;
   display: flex;
   align-items: center;
   text-align: center;
   text-align: justify;
   justify-content: space-between;
   flex-direction: column;
-  border: 3px solid #177587;
-  background-color: #177587;
+  border: none;
+  background-color: #141b4285;
   margin: 5px auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -52,15 +54,15 @@ body {
   flex-wrap: wrap; 
   align-items: center;
   width: 95vw;
-  margin: 30px auto; 
+  margin: 80px auto; 
   flex-direction: row;
 }
 
 /*-------------------------------------------- CARDS --------------------------------------------*/
 
 .cards {
-  height: 375px;
-  width: 26%;
+  height: 500px;
+  width: 31%;
   display: flex;
   align-items: center;
   justify-content: space-between;

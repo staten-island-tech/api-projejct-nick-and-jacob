@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% block content %}
 <html>
 
 <head>
@@ -12,17 +13,17 @@
   <h1 class='text-gradient'><b>Welcome to interactive World Data!</b></h1>
 </nav>
 <body>
-  {% for x in cards['card']%}
-    {% if x['option'] %}
-    <div class='flex-container'>
-      <div class='cards'>
-        <h2>{{ x['option']}}</h2>
-      </div>
-    </div>
-    {% endif %}
-  {% endfor %}
-  <span> 
-  </span>
+  <div class='flex-container'>
+    {% for x in data['card'] %}
+      {% if x['option'] %}
+        <div class='cards'>
+          <h2>{{ x['option']}}</h2>
+          <a href="{{ x['link']}}" class="button">Here</a>
+        </div>
+      {% endif %}
+    {% endfor %}    
+  </div>
 
 </body>
 </html>
+{% endblock %}
