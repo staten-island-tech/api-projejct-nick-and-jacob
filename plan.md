@@ -12,15 +12,16 @@ https://github.com/public-apis/public-apis
 - REST Countries
 - Zippopotam.us
 - Cartes.io
+- graphcountries
 
 
 
 ## home page
-breif description
+brief description
 different options
 -interactive globe link
 -search engine
-    -statuses of countries
+-statuses of countries
 -countries display page
 
 

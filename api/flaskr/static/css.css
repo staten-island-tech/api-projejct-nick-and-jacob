@@ -1,14 +1,14 @@
 html {
   background-image: linear-gradient(45deg, rgb(27, 27, 40), rgba(85, 85, 156, 0.7), rgb(27, 27, 40));
   background-repeat: no-repeat;
-  font-family: 'Bungee', cursive;
+  font-family: 'Verdana', cursive;
   margin: 0;
   padding: 0;
 }
 
 
 .button {
-  height: 48px;
+  height: 60px;
   width: 200px;
   display: flex;
   align-items: center;
@@ -16,8 +16,8 @@ html {
   text-align: justify;
   justify-content: space-between;
   flex-direction: column;
-  border: 3px solid #177587;
-  background-color: #172564;
+  border: 3px solid #965c0f;
+  background-color: #1a2450;
   margin: 5px auto;
   margin-top: 20px;
   margin-bottom: 20px;
@@ -71,7 +71,7 @@ svg path:hover{
   cursor: pointer;
 }
 svg:hover {
-  transition: 0.1s;
+  transition: 0.7s;
   scroll-behavior: smooth;
 }
 /*--------------------------------------- Fine Tuning ---------------------------------------*/
