@@ -14,7 +14,7 @@ html {
   background-clip:text;
 }
 span {
-  content: none;  
+  content: '';  
   background: fixed;
   background-size: 30vmin, 100vmax;
   color: transparent;
@@ -23,10 +23,17 @@ span {
 
 a {
   text-decoration: none;
+  text-align: justify;
+  text-align:center;
+  align-items: center;
+  color: black;
+  font-family: 'Verdana', cursive;
+  margin-top: 15px;
 }
-.button {
+
+button {
   height: 10%;
-  width: 80%;
+  width: 60%;
   display: flex;
   align-items: center;
   text-align: center;
@@ -35,11 +42,11 @@ a {
   flex-direction: column;
   border: none;
   background-color: #141b4285;
+  border-radius: 15px;
   margin: 5px auto;
   margin-top: 20px;
   margin-bottom: 20px;
   line-height: 40px;
-  border-radius: 15px;
   text-decoration: none;
 }
 body {
@@ -62,7 +69,7 @@ body {
 
 .cards {
   height: 500px;
-  width: 31%;
+  width: 30%;
   display: flex;
   align-items: center;
   justify-content: space-between;
