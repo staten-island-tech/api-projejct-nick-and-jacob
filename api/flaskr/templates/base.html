@@ -16,8 +16,9 @@
   <div class='flex-container'>
     {% for x in data['card'] %}
       {% if x['option'] %}
-        <div class='cards'>
-          <h2>{{ x['option']}}</h2>
+        <div class='cards card-text'>
+          <h2 class="card-title">{{ x['option']}}</h2>
+          <img src="{{ x['image']}}" class="worldmap_img">
           <button href="{{ x['link']}}"><a href="{{ x['link']}}">Here</a></button>
         </div>
       {% endif %}

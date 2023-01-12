@@ -28,7 +28,7 @@ a {
   align-items: center;
   color: black;
   font-family: 'Verdana', cursive;
-  margin-top: 15px;
+  margin-top: 7px;
 }
 
 button {
@@ -45,7 +45,7 @@ button {
   border-radius: 15px;
   margin: 5px auto;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   line-height: 40px;
   text-decoration: none;
 }
@@ -68,8 +68,8 @@ body {
 /*-------------------------------------------- CARDS --------------------------------------------*/
 
 .cards {
-  height: 500px;
-  width: 30%;
+  height: 600px;
+  width: 475px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -81,6 +81,18 @@ body {
   transition: all 0.3s;
   box-shadow: rgb(0, 0, 0);
   box-shadow: 1px 12px 15px rgba(0, 0, 0, .4);
+}
+.card-text {
+  font-size:medium;
+}
+.card-title {
+  margin-top: 50px;
+  margin-bottom: -20px;
+}
+.worldmap_img {
+  height: 250px;
+  width: 475px;
+  margin-bottom: -15px;
 }
 /*--------------------------------------- SVG images ---------------------------------------*/
 svg path{
