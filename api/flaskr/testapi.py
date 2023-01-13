@@ -1,4 +1,10 @@
-# from restcountries import RestCountryApiV2 as rapi
+import requests
+url = "https://api.countrystatecity.in/v1/countries/"
 
-# def foo(name):
-#     country_list = rapi.get_countries_by_name('South Africa' ,filters=["name","currencies","capital"])
+headers = {
+  'X-CSCAPI-KEY': 'MVB6MjhnMDB6OUtPTU9DR0pGUUxsYUl4YXFaNXhnSXVDbGk5VGVYcA=='
+}
+
+response = requests.request("GET", url, headers=headers)
+
+print(response.text)

@@ -2,9 +2,13 @@ import os
 from flask import Flask, render_template, request
 from .data import *
 import requests
-# url = 'https://www.mapquestapi.com/staticmap/v5/map'
-# response = requests.get(url)
 
+url = "https://api.countrystatecity.in/v1/countries/"
+
+headers = {
+  'X-CSCAPI-KEY': 'MVB6MjhnMDB6OUtPTU9DR0pGUUxsYUl4YXFaNXhnSXVDbGk5VGVYcA=='
+}
+response = requests.request("GET", url, headers=headers)
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
@@ -25,9 +29,12 @@ def create_app(test_config=None):
     def hello():
         return render_template('base.html', data=data)
     
-    @app.route('/WorldMap/<country>')
+    @app.route('/WorldMap/<country>', methods=['GET'])
     def output(country):
-        if country == country:
+        url = "https://api.countrystatecity.in/v1/countries/"
+        response = requests.request("GET", url, headers=headers)
+        for country in url:
+            
             return render_template('output.html', data=data)
         else:
             return render_template('error.html', data=data)
