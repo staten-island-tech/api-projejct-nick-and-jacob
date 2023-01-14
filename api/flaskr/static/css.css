@@ -7,37 +7,46 @@ html {
 }
 .text-gradient{
   font-size: 38px;
-  background-image: linear-gradient(45deg,rgb(45, 45, 97),rgb(81, 177, 184));
+  background-image: linear-gradient(45deg,rgba(23, 76, 80, 0.9),rgba(16, 16, 65, 0.9));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip:text;
   -moz-background-clip:text;
   background-clip:text;
 }
 span {
-  content: none;  
+  content: '';  
   background: fixed;
-  background-color: rgba(23, 25, 97, 0.5);
-  background-image: -webkit-repeating-linear-gradient(-45deg, rgb(23, 25, 97),rgba(57, 60, 136, 0.685),rgb(23, 25, 97));
   background-size: 30vmin, 100vmax;
+  color: transparent;
+  pointer-events: none;
 }
 
+a {
+  text-decoration: none;
+  text-align: justify;
+  text-align:center;
+  align-items: center;
+  color: black;
+  font-family: 'Verdana', cursive;
+  margin-top: 7px;
+}
 
-.button {
-  height: 48px;
-  width: 200px;
+button {
+  height: 10%;
+  width: 60%;
   display: flex;
   align-items: center;
   text-align: center;
   text-align: justify;
   justify-content: space-between;
   flex-direction: column;
-  border: 3px solid #177587;
-  background-color: #177587;
+  border: none;
+  background-color: #141b4285;
+  border-radius: 15px;
   margin: 5px auto;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
   line-height: 40px;
-  border-radius: 15px;
   text-decoration: none;
 }
 body {
@@ -52,15 +61,15 @@ body {
   flex-wrap: wrap; 
   align-items: center;
   width: 95vw;
-  margin: 30px auto; 
+  margin: 80px auto; 
   flex-direction: row;
 }
 
 /*-------------------------------------------- CARDS --------------------------------------------*/
 
 .cards {
-  height: 375px;
-  width: 26%;
+  height: 600px;
+  width: 475px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -72,6 +81,18 @@ body {
   transition: all 0.3s;
   box-shadow: rgb(0, 0, 0);
   box-shadow: 1px 12px 15px rgba(0, 0, 0, .4);
+}
+.card-text {
+  font-size:medium;
+}
+.card-title {
+  margin-top: 50px;
+  margin-bottom: -20px;
+}
+.worldmap_img {
+  height: 250px;
+  width: 475px;
+  margin-bottom: -15px;
 }
 /*--------------------------------------- SVG images ---------------------------------------*/
 svg path{

@@ -1,19 +1,19 @@
-card = {'CARD':[
-    {'option':'SearchCountry',
+data = {'card':
+    [{'option':'Search Country',
      'info':'',
-     'link':'/SearchCountry',
-     'img':'',},
+     'link':'/Search_Country',
+     'image':'',},
     
-    {'option':'WorldMap',
+    {'option':'World Map',
      'info':'',
-     'link':'/WorldMap',
-     'img':'',},
+     'link':'/World_Map',
+     'image':'../static/imgs/PngItem_588664.png',},
     
-    {'option':'CountryList',
+    {'option':'Country List',
      'info':'',
-     'link':'/CountryList',
-     'img':'',},]
+     'link':'/Country_List',
+     'image':'',},
+    ],
+    'intworld': 'Welcome to Interactive World Data'
 }
 
-def button():
-    input = ['']

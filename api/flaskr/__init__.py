@@ -1,10 +1,14 @@
 import os
 from flask import Flask, render_template, request
 from .data import *
+import requests
 
-# url = 'https://www.mapquestapi.com/staticmap/v5/map'
-# response = requests.get(url)
+url = "https://api.countrystatecity.in/v1/countries/"
 
+headers = {
+  'X-CSCAPI-KEY': 'MVB6MjhnMDB6OUtPTU9DR0pGUUxsYUl4YXFaNXhnSXVDbGk5VGVYcA=='
+}
+response = requests.request("GET", url, headers=headers)
 
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
@@ -23,29 +27,32 @@ def create_app(test_config=None):
     
     @app.route('/')
     def hello():
-        return render_template('base.html')
+        return render_template('base.html', data=data)
     
-    @app.route('/WorldMap/<country>')
+    @app.route('/WorldMap/<country>', methods=['GET'])
     def output(country):
-        if country == country:
-            return render_template('output.html')
+        url = "https://api.countrystatecity.in/v1/countries/"
+        response = requests.request("GET", url, headers=headers)
+        for country in url:
+            
+            return render_template('output.html', data=data)
         else:
-            return render_template('error.html')
+            return render_template('error.html', data=data)
         
-    @app.route('/<data>')
-    def world(data):
+    @app.route('/<Data>')
+    def world(Data):
         placeholder = []
-        for x in card['CARD']:
+        for x in data['card']:
             placeholder.append(x['option'])
-        if data == 'WorldMap':
-            return render_template('world.html')
-        elif data == 'SearchCountry':
-            return render_template('search.html')
-        elif data == 'CountryList':
-            return render_template('countrylist.html')
+        if Data == 'World_Map':
+            return render_template('world.html', data=data)
+        elif Data == 'Search_Country':
+            return render_template('search.html', data=data)
+        elif Data == 'Country_List':
+            return render_template('countrylist.html', data=data)
         else:
-            return render_template('error.html')
-         
+            return render_template('error.html', data=data)
+
     return app
 
 
