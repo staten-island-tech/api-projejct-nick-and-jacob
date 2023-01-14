@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-{% block content %}
 <html>
 
 <head>
@@ -13,7 +12,7 @@
   <h1 class='text-gradient'><b>Welcome to interactive World Data!</b></h1>
 </nav>
 <body>
-  {% for x in cards['card']%}
+  {% for x in card %}
     {% if x['option'] %}
     <div class='flex-container'>
       <div class='cards'>
@@ -27,4 +26,3 @@
 
 </body>
 </html>
-{% endblock %}

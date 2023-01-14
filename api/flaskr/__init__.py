@@ -1,6 +1,6 @@
 import os
 from flask import Flask, render_template, request
-from .data import cards
+from .data import *
 
 # url = 'https://www.mapquestapi.com/staticmap/v5/map'
 # response = requests.get(url)
@@ -35,7 +35,7 @@ def create_app(test_config=None):
     @app.route('/<data>')
     def world(data):
         placeholder = []
-        for x in cards['card']:
+        for x in card['CARD']:
             placeholder.append(x['option'])
         if data == 'WorldMap':
             return render_template('world.html')

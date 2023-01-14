@@ -1,4 +1,4 @@
-cards = {'card':[
+card = {'CARD':[
     {'option':'SearchCountry',
      'info':'',
      'link':'/SearchCountry',
