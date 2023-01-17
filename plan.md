@@ -1,5 +1,5 @@
 ## GET API WORKINHG
-options:
+<!-- options:
 - Mapbox- out of bounds
 - Google Maps- out of bounds
 - TomTom- out of bounds
@@ -11,8 +11,8 @@ https://github.com/public-apis/public-apis
 - MapQuest
 - REST Countries
 - Zippopotam.us
-- Cartes.io
-
+- Cartes.io -->
+we got an api finally - country state city api
 
 
 ## home page

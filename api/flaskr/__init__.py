@@ -28,17 +28,7 @@ def create_app(test_config=None):
     @app.route('/')
     def hello():
         return render_template('base.html', data=data)
-    
-    @app.route('/WorldMap/<country>', methods=['GET'])
-    def output(country):
-        url = "https://api.countrystatecity.in/v1/countries/"
-        response = requests.request("GET", url, headers=headers)
-        for country in url:
-            
-            return render_template('output.html', data=data)
-        else:
-            return render_template('error.html', data=data)
-        
+
     @app.route('/<Data>')
     def world(Data):
         placeholder = []
@@ -53,6 +43,18 @@ def create_app(test_config=None):
         else:
             return render_template('error.html', data=data)
 
+
+    @app.route('/WorldMap/<country>', methods=['GET'])
+    def output(country):
+        contry = []
+        for x in response:
+            contry.append(x)
+        if country in contry:
+            countrydata = requests.get(f"https://api.countrystatecity.in/v1/countries/").json()
+            return render_template('output.html', data=data, countrydata=countrydata)
+           
+        return render_template('error.html', data=data)
+    
     return app
 
 
