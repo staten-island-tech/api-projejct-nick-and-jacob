@@ -1,9 +1,10 @@
+import json
 import os
 from flask import Flask, render_template, request
 from .data import *
 import requests
 
-url = "https://api.countrystatecity.in/v1/countries/"
+url = "https://api.countrystatecity.in/v1/countries/".json()
 
 headers = {
   'X-CSCAPI-KEY': 'MVB6MjhnMDB6OUtPTU9DR0pGUUxsYUl4YXFaNXhnSXVDbGk5VGVYcA=='
@@ -46,13 +47,15 @@ def create_app(test_config=None):
 
     @app.route('/WorldMap/<country>', methods=['GET'])
     def output(country):
-        contry = []
-        for x in response:
-            contry.append(x)
-        if country in contry:
-            countrydata = requests.get(f"https://api.countrystatecity.in/v1/countries/").json()
-            return render_template('output.html', data=data, countrydata=countrydata)
-           
+        lists = []
+        request = requests.get(f"https://api.countrystatecity.in/v1/countries/{country}".json())
+        for country in response:
+            if country in request:
+                lists.append(country)
+                print(request)
+                return render_template('output.html', data=data, response=response, )
+            else:
+                return render_template('error.html', data=data)
         return render_template('error.html', data=data)
     
     return app
@@ -60,8 +63,13 @@ def create_app(test_config=None):
 
 
 
-
-
+        # contry = []
+# for x in response:
+#             contry.append(x)
+#         if country in contry:
+#             countrydata = requests.get(f"https://api.countrystatecity.in/v1/countries/").json()
+#             return render_template('output.html', data=data, countrydata=countrydata)
+           
 
 
 
