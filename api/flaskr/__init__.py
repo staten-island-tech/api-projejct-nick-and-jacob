@@ -1,16 +1,16 @@
 import json
 import os
-from flask import Flask, render_template, request
+from flask import Flask, render_template
 from .data import *
 import requests
-
-url = "https://api.countrystatecity.in/v1/countries/".json()
-
+api = []
+url = "https://api.countrystatecity.in/v1/countries/"
+ 
 headers = {
   'X-CSCAPI-KEY': 'MVB6MjhnMDB6OUtPTU9DR0pGUUxsYUl4YXFaNXhnSXVDbGk5VGVYcA=='
 }
 response = requests.request("GET", url, headers=headers)
-
+api.append(response)
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
@@ -45,15 +45,21 @@ def create_app(test_config=None):
             return render_template('error.html', data=data)
 
 
-    @app.route('/WorldMap/<country>', methods=['GET'])
+    @app.route('/WorldMap/<country>')
     def output(country):
         lists = []
-        request = requests.get(f"https://api.countrystatecity.in/v1/countries/{country}".json())
-        for country in response:
-            if country in request:
-                lists.append(country)
-                print(request)
-                return render_template('output.html', data=data, response=response, )
+        for x in api:
+            placeholder = x['name']['iso2']
+            
+            if country in placeholder:
+            
+                ['iso2']
+                lists.append(country['iso2'])
+                request_response = requests.get(f"https://api.countrystatecity.in/v1/countries/{lists}").json
+                data1 = request_response.text
+                parsejson = json.loads(data1)
+
+                return render_template('output.html', data=data, country = country)
             else:
                 return render_template('error.html', data=data)
         return render_template('error.html', data=data)
