@@ -29,6 +29,8 @@ a {
   color: black;
   font-family: 'Verdana', cursive;
   margin-top: 7px;
+  height: 10%;
+  width: 60%;
 }
 
 button {
@@ -78,6 +80,21 @@ body {
   background-image: radial-gradient(#2f375f 10%, #424b77c7);
   margin: 30px;
   border-radius: 15px;
+  transition: all 0.3s;
+  box-shadow: rgb(0, 0, 0);
+  box-shadow: 1px 12px 15px rgba(0, 0, 0, .4);
+}
+.card {
+  height: 100px;
+  width: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  border: 1px transparent;
+  background-image: radial-gradient(#2f375f 10%, #424b77c7);
+  margin: 25px;
+  border-radius: 10px;
   transition: all 0.3s;
   box-shadow: rgb(0, 0, 0);
   box-shadow: 1px 12px 15px rgba(0, 0, 0, .4);

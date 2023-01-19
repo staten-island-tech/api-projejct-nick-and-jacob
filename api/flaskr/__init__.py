@@ -3,14 +3,9 @@ import os
 from flask import Flask, render_template
 from .data import *
 import requests
-api = []
-url = "https://api.countrystatecity.in/v1/countries/"
- 
 headers = {
-  'X-CSCAPI-KEY': 'MVB6MjhnMDB6OUtPTU9DR0pGUUxsYUl4YXFaNXhnSXVDbGk5VGVYcA=='
+    'X-CSCAPI-KEY': 'MVB6MjhnMDB6OUtPTU9DR0pGUUxsYUl4YXFaNXhnSXVDbGk5VGVYcA=='
 }
-response = requests.request("GET", url, headers=headers)
-api.append(response)
 def create_app(test_config=None):
     app = Flask(__name__, instance_relative_config=True)
     app.config.from_mapping(
@@ -30,55 +25,83 @@ def create_app(test_config=None):
     def hello():
         return render_template('base.html', data=data)
 
+
+
     @app.route('/<Data>')
     def world(Data):
         placeholder = []
         for x in data['card']:
             placeholder.append(x['option'])
-        if Data == 'World_Map':
+        if Data == 'WorldMap':
             return render_template('world.html', data=data)
         elif Data == 'Search_Country':
             return render_template('search.html', data=data)
         elif Data == 'Country_List':
-            return render_template('countrylist.html', data=data)
+            response1 = requests.get(f'https://api.countrystatecity.in/v1/countries/', headers=headers)
+            responses1 = response1.text
+            returned1 = json.loads(responses1)
+            for y in returned1:
+                print(y)
+                return render_template('countrylist.html', data=data,)
+            return render_template('error.html', data=data)
         else:
             return render_template('error.html', data=data)
-
-
+    
+    
+    
+    @app.route('/Country_List/<data>')
+    def countrylist(data):
+        response = requests.get(f'https://api.countrystatecity.in/v1/countries/', headers=headers)
+        responses = response.text
+        returned = json.loads(responses)
+        name = returned['name']
+        for x in returned:
+            if data == x['name']:
+                iso2 = x['iso2']    
+                requestresponse = requests.get(f"https://api.countrystatecity.in/v1/countries/{iso2}", headers=headers)
+                data1 = requestresponse.text
+                parsejson = json.loads(data1)
+                name_country = parsejson['name']
+                capital_country = parsejson['capital']
+                phonecode = parsejson['phonecode']
+                currency = parsejson['currency']
+                name_currency = parsejson['currency_name']
+                symbol_currency = parsejson['currency_symbol']
+                timezones = parsejson['timezones']
+                latitude = parsejson['latitude']
+                longitude = parsejson['longitude']
+                return render_template('output.html', data=data, name=name, capital_country=capital_country, name_country=name_country, phonecode=phonecode, currency=currency, name_currency=name_currency, symbol_currency=symbol_currency, timezones=timezones, latitude=latitude, longitude=longitude)
+        return render_template('error.html', data=data)
+        
+        
+        
     @app.route('/WorldMap/<country>')
     def output(country):
-        lists = []
-        for x in api:
-            placeholder = x['name']['iso2']
-            
-            if country in placeholder:
-            
-                ['iso2']
-                lists.append(country['iso2'])
-                request_response = requests.get(f"https://api.countrystatecity.in/v1/countries/{lists}").json
-                data1 = request_response.text
+        response = requests.get(f'https://api.countrystatecity.in/v1/countries/', headers=headers)
+        responses = response.text
+        returned = json.loads(responses)
+        for x in returned:
+            if country == x['name']:
+                iso2 = x['iso2']    
+                requestresponse = requests.get(f"https://api.countrystatecity.in/v1/countries/{iso2}", headers=headers)
+                data1 = requestresponse.text
                 parsejson = json.loads(data1)
-
-                return render_template('output.html', data=data, country = country)
-            else:
-                return render_template('error.html', data=data)
+                name_country = parsejson['name']
+                capital_country = parsejson['capital']
+                phonecode = parsejson['phonecode']
+                currency = parsejson['currency']
+                name_currency = parsejson['currency_name']
+                symbol_currency = parsejson['currency_symbol']
+                timezones = parsejson['timezones']
+                latitude = parsejson['latitude']
+                longitude = parsejson['longitude']
+                return render_template('output.html', data=data, capital_country=capital_country, name_country=name_country, phonecode=phonecode, currency=currency, name_currency=name_currency, symbol_currency=symbol_currency, timezones=timezones, latitude=latitude, longitude=longitude)
+        
+        
+        
         return render_template('error.html', data=data)
     
     return app
-
-
-
-
-        # contry = []
-# for x in response:
-#             contry.append(x)
-#         if country in contry:
-#             countrydata = requests.get(f"https://api.countrystatecity.in/v1/countries/").json()
-#             return render_template('output.html', data=data, countrydata=countrydata)
-           
-
-
-
 
 
 

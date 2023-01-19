@@ -6,7 +6,7 @@ data = {'card':
     
     {'option':'World Map',
      'info':'',
-     'link':'/World_Map',
+     'link':'/WorldMap',
      'image':'../static/imgs/PngItem_588664.png',},
     
     {'option':'Country List',
