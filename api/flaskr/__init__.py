@@ -43,35 +43,17 @@ def create_app(test_config=None):
             return render_template('error.html', data=data)
     
 
-    @app.route('/Country_List/<pathh>')
-    def countrylist(pathh):
-        for pathh in returned:
-            for x in returned:
-                if pathh == x['name']:
-                    iso2 = x['iso2']    
-                    name = x['name']
-                    print(name)
-                    requestresponse = requests.get(f"https://api.countrystatecity.in/v1/countries/{iso2}", headers=headers)
-                    data1 = requestresponse.text
-                    parsejson = json.loads(data1)
-                    name_country = parsejson['name']
-                    capital_country = parsejson['capital']
-                    phonecode = parsejson['phonecode']
-                    currency = parsejson['currency']
-                    name_currency = parsejson['currency_name']
-                    symbol_currency = parsejson['currency_symbol']
-                    timezones = parsejson['timezones']
-                    latitude = parsejson['latitude']
-                    longitude = parsejson['longitude']
-                    return render_template('output.html', data=data, name=name, capital_country=capital_country, name_country=name_country, phonecode=phonecode, currency=currency, name_currency=name_currency, symbol_currency=symbol_currency, timezones=timezones, latitude=latitude, longitude=longitude)
-        
-        else:
-            for x in returned == x['name']:
-                name = x['name']
-                print(name)
-                return render_template('countrylist.html', data=data, name=name)
-                
+    
+    @app.route('/Country_List')
+    def list_country():
+        response = requests.get(f'https://api.countrystatecity.in/v1/countries/', headers=headers)
+        responses = response.text
+        returned = json.loads(responses)
+        for x in returned:
+            x = x['name']
 
+            print(x)
+            return render_template('countrylist.html', returned=returned)
         
         
     @app.route('/WorldMap/<country>')
