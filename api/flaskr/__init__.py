@@ -36,28 +36,26 @@ def create_app(test_config=None):
             return render_template('world.html', data=data)
         elif Data == 'Search_Country':
             return render_template('search.html', data=data)
-        elif Data == 'Country_List':
-            response1 = requests.get(f'https://api.countrystatecity.in/v1/countries/', headers=headers)
-            responses1 = response1.text
-            returned1 = json.loads(responses1)
-            for y in returned1:
-                print(y)
-                return render_template('countrylist.html', data=data,)
-            return render_template('error.html', data=data)
         else:
             return render_template('error.html', data=data)
     
-    
+    @app.route('/Country_List')
+    def countrypage():
+        response1 = requests.get(f'https://api.countrystatecity.in/v1/countries/', headers=headers)
+        responses1 = response1.text
+        returned1 = json.loads(responses1)
+        name = returned1['name']
+        return render_template('countrylist.html', data=data, name=name)
     
     @app.route('/Country_List/<data>')
     def countrylist(data):
         response = requests.get(f'https://api.countrystatecity.in/v1/countries/', headers=headers)
         responses = response.text
         returned = json.loads(responses)
-        name = returned['name']
         for x in returned:
             if data == x['name']:
                 iso2 = x['iso2']    
+                name = x['name']
                 requestresponse = requests.get(f"https://api.countrystatecity.in/v1/countries/{iso2}", headers=headers)
                 data1 = requestresponse.text
                 parsejson = json.loads(data1)
