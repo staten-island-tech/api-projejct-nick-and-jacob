@@ -9,12 +9,12 @@
 </head>
 
 <body> 
-  <h1> hi </h1>
+  <h1 class='text-gradient'> This is our Country List</h1>
   <div class='flex-container'>
     {% for x in returned %}
       <div class='card card-text'>
         <h4>{{x['name']}}</h4>
-        <button><a href='/Country_List/{{x["name"]}}'>Go to Country</a></button>
+        <a href='/Country_List/{{x["name"]}}'><button class='button2'>Go to Country</button></a>
       </div>
     {% endfor %}
   </div>

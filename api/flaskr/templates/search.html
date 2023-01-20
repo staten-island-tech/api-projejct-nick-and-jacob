@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content%}
+<head>
+  <link rel="stylesheet" href="../static/css.css">
+</head>
+<body>
+  <div>
+    <form method="post">
+      <label for="body">Search Country...</label>
+      <textarea name="search" id="body">{{ request.form['search'] }}</textarea>
+      <input type="submit" value="Save" />
+    </form>
+  </div>
+</body>
+{% endblock %}
+
+

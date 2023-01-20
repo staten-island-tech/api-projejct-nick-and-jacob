@@ -1,11 +1,11 @@
-{% extends 'world.html'%}
+{% extends 'countrylist.html'%}
 {% block content %}
 <html>
 <head>
   <link rel="stylesheet" href="../static/css.css">
 </head>
 <body>
-  <h1><u><b>{{name_country}}</b></u></h1>
+  <h1><u><b>{{name}}</b></u></h1>
   <div>
     <h3> Capital:  {{capital_country}}</h3>
     <h3> Currency:  {{currency}}</h3>
@@ -18,7 +18,7 @@
     <h2><u> Timezones: </u></h2>
     <h3> {{timezones}}</h3>
   </div>
-  <button><a href='/WorldMap'>Click to go back to World Map</a></button>
+  <button><a href='/Country_List'>Click to go back to Country List</a></button>
 </body>
 
 

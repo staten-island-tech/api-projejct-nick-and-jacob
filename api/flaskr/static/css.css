@@ -5,9 +5,28 @@ html {
   margin: 0;
   padding: 0;
 }
+
 .text-gradient{
-  font-size: 38px;
-  background-image: linear-gradient(45deg,rgba(23, 76, 80, 0.9),rgba(16, 16, 65, 0.9));
+  font-size: 48px;
+  background-image: linear-gradient(45deg,rgb(16, 16, 65),rgba(10, 196, 209, 0.603) -5% ,rgb(16, 16, 65));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip:text;
+  -moz-background-clip:text;
+  background-clip:text;
+}
+
+.text-gradient_card{
+  font-size: 32px;
+  background-image: linear-gradient(45deg,rgba(16, 16, 65, 0.9),rgba(51, 18, 104, 0.653) -30% ,rgba(16, 16, 65, 0.9));
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip:text;
+  -moz-background-clip:text;
+  background-clip:text;
+}
+
+.text-gradient_world_map{
+  font-size: 25px;
+  background-image: linear-gradient(45deg,rgba(16, 16, 65, 0.9),rgba(10, 196, 209, 0.3) -5% ,rgba(16, 16, 65, 0.9));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip:text;
   -moz-background-clip:text;
@@ -20,40 +39,37 @@ span {
   color: transparent;
   pointer-events: none;
 }
-
-a {
-  text-decoration: none;
-  text-align: justify;
-  text-align:center;
-  align-items: center;
-  color: black;
-  font-family: 'Verdana', cursive;
-  margin-top: 7px;
-  height: 10%;
-  width: 60%;
-}
-
-button {
-  height: 10%;
-  width: 60%;
-  display: flex;
-  align-items: center;
-  text-align: center;
-  text-align: justify;
-  justify-content: space-between;
-  flex-direction: column;
-  border: none;
-  background-color: #141b4285;
-  border-radius: 15px;
-  margin: 5px auto;
-  margin-top: 20px;
-  margin-bottom: 50px;
-  line-height: 40px;
-  text-decoration: none;
-}
 body {
   text-align: center;
 }
+
+
+a {
+  text-decoration: none;
+}
+.button1 {
+  cursor: default;
+  width: 200px;
+  margin-bottom: 50px;
+  background-color: #141b4285;
+  border: transparent;
+  border-radius: 20px;
+}
+.button1:hover {
+  cursor: pointer;
+}
+.button2 {
+  cursor: default;
+  width: 200px;
+  margin-bottom: 50px;
+  background-color: #141b4285;
+  border: transparent;
+  border-radius: 7px;
+}
+.button2:hover {
+  cursor: pointer;
+}
+
 
 /*---------------------------------------- FLEX CONTAINER ----------------------------------------*/
 
@@ -103,13 +119,12 @@ body {
   font-size:medium;
 }
 .card-title {
-  margin-top: 50px;
-  margin-bottom: -20px;
+  margin-top: 58px;
 }
 .worldmap_img {
   height: 250px;
   width: 475px;
-  margin-bottom: -15px;
+  pointer-events: none;
 }
 /*--------------------------------------- SVG images ---------------------------------------*/
 svg path{
