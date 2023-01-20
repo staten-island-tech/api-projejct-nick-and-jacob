@@ -1,5 +1,5 @@
 data = {'card':
-    [{'option':'Search Country',
+    [{'option':'Search Country (WIP)',
      'info':'',
      'link':'/Search_Country',
      'image':'',},

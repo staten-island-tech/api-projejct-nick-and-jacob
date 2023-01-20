@@ -103,8 +103,6 @@ def create_app(test_config=None):
                 latitude = parsejson['latitude']
                 longitude = parsejson['longitude']
                 timezones = parsejson['timezones']
-                # for x in timezones:
-                    
                 return render_template('output2.html', data=data, capital_country=capital_country, name=name, phonecode=phonecode, currency=currency, name_currency=name_currency, symbol_currency=symbol_currency, timezones=timezones, latitude=latitude, longitude=longitude)
         
     @app.route('/WorldMap/<country>')
