@@ -5,10 +5,9 @@
 </head>
 <body>
   <div>
-    <form method="post">
-      <label for="body">Search Country...</label>
-      <textarea name="search" id="body">{{ request.form['search'] }}</textarea>
-      <input type="submit" value="Save" />
+    <form id="form"> 
+      <input type="search" id="query" name="q" placeholder="Search...">
+      <button>Search</button>
     </form>
   </div>
 </body>

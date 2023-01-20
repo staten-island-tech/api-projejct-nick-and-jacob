@@ -49,23 +49,22 @@ def create_app(test_config=None):
     
 
     
-    @app.route('/Search_Country', methods=('GET', 'POST'))
+    @app.route('/Search Country')
     def GetPost():
-        if request.method == 'POST':
-            search = request.form['search']
-            part1 = requests.get(f"https://api.countrystatecity.in/v1/countries/{search}", headers=headers)
-            part2 = part1.text
-            searchcountry = json.loads(part2)
-            name = searchcountry['name']
-            capital_country = searchcountry['capital']
-            phonecode = searchcountry['phonecode']
-            currency = searchcountry['currency']
-            name_currency = searchcountry['currency_name']
-            symbol_currency = searchcountry['currency_symbol']
-            latitude = searchcountry['latitude']
-            longitude = searchcountry['longitude']
-            timezones = searchcountry['timezones']
-            return render_template('search.html', data=data, capital_country=capital_country, name=name, phonecode=phonecode, currency=currency, name_currency=name_currency, symbol_currency=symbol_currency, timezones=timezones, latitude=latitude, longitude=longitude)
+        search = request.form['search']
+        part1 = requests.get(f"https://api.countrystatecity.in/v1/countries/{search}", headers=headers)
+        part2 = part1.text
+        searchcountry = json.loads(part2)
+        name = searchcountry['name']
+        capital_country = searchcountry['capital']
+        phonecode = searchcountry['phonecode']
+        currency = searchcountry['currency']
+        name_currency = searchcountry['currency_name']
+        symbol_currency = searchcountry['currency_symbol']
+        latitude = searchcountry['latitude']
+        longitude = searchcountry['longitude']
+        timezones = searchcountry['timezones']
+        return render_template('search.html', data=data, capital_country=capital_country, name=name, phonecode=phonecode, currency=currency, name_currency=name_currency, symbol_currency=symbol_currency, timezones=timezones, latitude=latitude, longitude=longitude)
 
     
     @app.route('/Country_List')
@@ -74,9 +73,7 @@ def create_app(test_config=None):
             x = x['name']
             print(x)
             return render_template('countrylist.html', returned=returned)
-    
-    
-    
+
     @app.route('/Country_List/<List>')
     def list_country(List):
         for x in returned:
@@ -97,7 +94,6 @@ def create_app(test_config=None):
                 # for x in timezones:
                     
                 return render_template('output2.html', data=data, capital_country=capital_country, name=name, phonecode=phonecode, currency=currency, name_currency=name_currency, symbol_currency=symbol_currency, timezones=timezones, latitude=latitude, longitude=longitude)
-            
         
     @app.route('/WorldMap/<country>')
     def output(country):
