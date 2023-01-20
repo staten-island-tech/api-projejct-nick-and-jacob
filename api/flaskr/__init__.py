@@ -47,25 +47,37 @@ def create_app(test_config=None):
         else:
             return render_template('error.html', data=data)
     
-
     
-    @app.route('/Search Country')
-    def GetPost():
-        search = request.form['search']
-        part1 = requests.get(f"https://api.countrystatecity.in/v1/countries/{search}", headers=headers)
-        part2 = part1.text
-        searchcountry = json.loads(part2)
-        name = searchcountry['name']
-        capital_country = searchcountry['capital']
-        phonecode = searchcountry['phonecode']
-        currency = searchcountry['currency']
-        name_currency = searchcountry['currency_name']
-        symbol_currency = searchcountry['currency_symbol']
-        latitude = searchcountry['latitude']
-        longitude = searchcountry['longitude']
-        timezones = searchcountry['timezones']
-        return render_template('search.html', data=data, capital_country=capital_country, name=name, phonecode=phonecode, currency=currency, name_currency=name_currency, symbol_currency=symbol_currency, timezones=timezones, latitude=latitude, longitude=longitude)
-
+    
+    @app.route('/Search_Country', method=("GET", "POST"))
+    def GetPost(method):
+        if request.method == 'POST':
+            search = request.form['search']
+            return render_template('search.html', search=search)
+        else:
+            search = request.form['search']
+            return render_template('search.html', search=search)
+        
+    @app.route('/Search_Country/<placeholder>')    
+    def trysearch(placeholder):
+        for x in returned:
+            if placeholder == x['name']:
+                iso2 = x['iso2']
+                requestresponse = requests.get(f"https://api.countrystatecity.in/v1/countries/{iso2}", headers=headers)
+                data1 = requestresponse.text
+                parsejson = json.loads(data1)
+                print(parsejson)
+                name = parsejson['name']
+                capital_country = parsejson['capital']
+                phonecode = parsejson['phonecode']
+                currency = parsejson['currency']
+                name_currency = parsejson['currency_name']
+                symbol_currency = parsejson['currency_symbol']
+                latitude = parsejson['latitude']
+                longitude = parsejson['longitude']
+                timezones = parsejson['timezones']
+                return render_template('output3.html', data=data, capital_country=capital_country, name=name, phonecode=phonecode, currency=currency, name_currency=name_currency, symbol_currency=symbol_currency, timezones=timezones, latitude=latitude, longitude=longitude)
+        
     
     @app.route('/Country_List')
     def listcountry():
@@ -73,13 +85,13 @@ def create_app(test_config=None):
             x = x['name']
             print(x)
             return render_template('countrylist.html', returned=returned)
-
+    
     @app.route('/Country_List/<List>')
     def list_country(List):
         for x in returned:
             if List == x['name']:
                 iso2 = x['iso2']    
-                requestresponse = requests.get(f"https://api.countrystatecity.in/v1/countries/{iso2}", headers=headers)
+                requestresponse = requests.get(f"https://api.countrystatecity.in/v1/countries/{iso2}", headers=headers).json()
                 data1 = requestresponse.text
                 parsejson = json.loads(data1)
                 name = parsejson['name']

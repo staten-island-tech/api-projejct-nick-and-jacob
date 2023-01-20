@@ -1,0 +1,27 @@
+{% extends 'search.html'%}
+{% block content %}
+<html>
+<head>
+  <link rel="stylesheet" href="../static/css.css">
+</head>
+<body>
+  <h1><u><b>{{search}}</b></u></h1>
+  <div>
+    <h3> Capital:  {{capital_country}}</h3>
+    <h3> Currency:  {{currency}}</h3>
+    <h3> Name of Currency:  {{name_currency}}</h3>
+    <h3> Symbol of Currency:  {{symbol_currency}}</h3>
+    <h3> Phonecode: {{phonecode}}</h3>
+    <h2><u> Location </u></h2>
+    <h3> Latitude: {{latitude}}</h3>
+    <h3> Longitude: {{longitude}}</h3>
+    <h2><u> Timezones: </u></h2>
+    <h3> {{timezones}}</h3>
+  </div>
+  <button><a href='/Country_List'>Click to go back to Country List</a></button>
+</body>
+
+
+
+</html>
+{% endblock %}
