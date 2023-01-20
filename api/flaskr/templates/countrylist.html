@@ -11,14 +11,12 @@
 <body> 
   <h1> hi </h1>
   <div class='flex-container'>
-    {% for x in returned: %}
-      {% if name: %}
-        <div class='card card-text'>
-          <h2>{{name}}</h2>
-          <button><a href='/Country_List/{{name}}'>Go to Country</a></button>
-        </div>
-      {% endif %}
-    {% endfor%}
+    {% for x in returned %}
+      <div class='card card-text'>
+        <h4>{{x['name']}}</h4>
+        <button><a href='/Country_List/{{x["name"]}}'>Go to Country</a></button>
+      </div>
+    {% endfor %}
   </div>
 </body>
 </html> 
