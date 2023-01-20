@@ -49,15 +49,7 @@ def create_app(test_config=None):
     
     
     
-    @app.route('/Search_Country', method=("GET", "POST"))
-    def GetPost(method):
-        if request.method == 'POST':
-            search = request.form['search']
-            return render_template('search.html', search=search)
-        else:
-            search = request.form['search']
-            return render_template('search.html', search=search)
-        
+
     @app.route('/Search_Country/<placeholder>')    
     def trysearch(placeholder):
         for x in returned:
@@ -91,7 +83,7 @@ def create_app(test_config=None):
         for x in returned:
             if List == x['name']:
                 iso2 = x['iso2']    
-                requestresponse = requests.get(f"https://api.countrystatecity.in/v1/countries/{iso2}", headers=headers).json()
+                requestresponse = requests.get(f"https://api.countrystatecity.in/v1/countries/{iso2}", headers=headers)
                 data1 = requestresponse.text
                 parsejson = json.loads(data1)
                 name = parsejson['name']
@@ -122,6 +114,7 @@ def create_app(test_config=None):
                 timezones = parsejson['timezones']
                 latitude = parsejson['latitude']
                 longitude = parsejson['longitude']
+                print(timezones)
                 return render_template('output1.html', data=data, capital_country=capital_country, name=name, phonecode=phonecode, currency=currency, name_currency=name_currency, symbol_currency=symbol_currency, timezones=timezones, latitude=latitude, longitude=longitude)
         return render_template('error.html', data=data)
     
